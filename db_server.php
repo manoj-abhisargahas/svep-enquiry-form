@@ -9,7 +9,7 @@
 			$pword = getenv('MYSQL_PASSWORD') ?: '';
 			$db = getenv('MYSQL_DATABASE') ?: 'svce_enquiry_db';
 
-			$GLOBALS["mysqli"] = new mysqli($host, $user, $pword, $db);
+			$GLOBALS["mysqli"] = new mysqli($host, $user, $pword, $db, $port);
 		
 			if(!($GLOBALS["mysqli"]->connect_errno==0)) {
 				//ERROR: Database Connection Error.
