@@ -1,0 +1,27 @@
+1.  install the Railway CLI using NPM
+npm install -g @railway/cli
+
+2. Login to Railway via Terminal
+railway login
+
+3. Link Your Project
+3.1. Change directory to your project folder
+cd C:\laragon\www\project_folder
+
+3.2. Link the terminal to your online project canvas by running:
+railway link
+
+4. Run the Tunnel and Import
+railway connect MySQL < svce_enquiry_db.sql
+
+
+5. Laragon Terminal or any terminal:
+railway connect MySQL --tunnel-only
+
+6. Connect in Heidi SQL:
+Copy the below variable info and try to Connect in Heidi SQL
+Host:     127.0.0.1
+Port:     60782
+User:     root
+Password: hcFKCJtBWXygAXzBwiJSrvCuTqtcfSwR
+Database: svep_enquiry_db
