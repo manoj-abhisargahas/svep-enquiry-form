@@ -3,7 +3,13 @@
 	
 	function connectDb() {
 		try {
-			$GLOBALS["mysqli"] = new mysqli("localhost", "root", "", "svce_enquiry_db");
+			$host = getenv('MYSQL_HOST');
+			$port = getenv('MYSQLPORT');
+			$user = getenv('MYSQLUSER');
+			$pword = getenv('MYSQL_PASSWORD');
+			$db = getenv('MYSQL_DATABASE');
+
+			$GLOBALS["mysqli"] = new mysqli($host, $user, $pword, $db);
 		
 			if(!($GLOBALS["mysqli"]->connect_errno==0)) {
 				//ERROR: Database Connection Error.
@@ -12,6 +18,9 @@
 				print_response();
 				exit();
 			}
+
+			// Set character set to prevent encoding issues with text
+			$GLOBALS["mysqli"]->set_charset("utf8mb4");
 		}
 		catch(Exception  $e) {
 			push_error_response("db-error");
