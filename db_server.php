@@ -3,11 +3,11 @@
 	
 	function connectDb() {
 		try {
-			$host = getenv('MYSQL_HOST') ?: '127.0.0.1';
+			$host = getenv('MYSQLHOST') ?: '127.0.0.1';
 			$port = getenv('MYSQLPORT') ?: '3306';
 			$user = getenv('MYSQLUSER') ?: 'root';
-			$pword = getenv('MYSQL_PASSWORD') ?: '';
-			$db = getenv('MYSQL_DATABASE') ?: 'svce_enquiry_db';
+			$pword = getenv('MYSQLPASSWORD') ?: '';
+			$db = getenv('MYSQL_DATABASE') ?: 'svep_enquiry_db';
 
 			$GLOBALS["mysqli"] = new mysqli($host, $user, $pword, $db, $port);
 		
